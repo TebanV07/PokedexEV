@@ -1,0 +1,17 @@
+.container {
+    position:relative;
+    display: flex;
+    flex-direction:row /* Coloca los elementos uno debajo del otro */
+    align-items: center; /* Alinea los elementos a la izquierda */
+    margin: 20px; /* Espacio alrededor de los elementos */
+  }
+  
+  .health {
+    position:relative;
+    margin: 10px 0; /* Espacio entre secciones de salud, ataque y defensa */
+    flex-direction: row;
+  }
+  
+
+ 
+  

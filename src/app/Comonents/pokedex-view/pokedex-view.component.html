@@ -1,0 +1,14 @@
+<section class="pokedex-view">
+    <div class="container pokemon">
+        <app-pokemon [solicitarImagen]="pokemonImagen"
+        (clickPokemon)="handlePokemon($event)"
+        ></app-pokemon>
+        <div class="buttons">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="square"></div>
+          </div>
+    </div>
+    <div class="container grafico"><app-grafico></app-grafico>
+    </div>
+</section>
