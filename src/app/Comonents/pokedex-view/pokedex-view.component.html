@@ -1,14 +1,31 @@
 <section class="pokedex-view">
-    <div class="container pokemon">
-        <app-pokemon [solicitarImagen]="pokemonImagen"
-        (clickPokemon)="handlePokemon($event)"
-        ></app-pokemon>
-        <div class="buttons">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="square"></div>
-          </div>
+  <div class="container">
+    <!-- Barra de Búsqueda -->
+    <input type="number" (input)="searchPokemon($event)" placeholder="Buscar Pokémon por ID" />
+    <button (click)="searchPokemon($event)">Reiniciar</button>
+    <!-- Imagen del Pokémon -->
+    <div class="pokemon">
+      <app-pokemon [solicitarImagen]="pokemonImagen"
+                    (clickPokemon)="handlePokemon($event)">
+      </app-pokemon>
     </div>
-    <div class="container grafico"><app-grafico></app-grafico>
+    <!-- Botón para obtener el Pokémon -->
+    <span *ngIf="pokemonObtenido" class="obtained-icon">✔️</span>
+    <span *ngIf="!pokemonObtenido" class="not-obtained-icon">⬜</span>
+    <!-- Botón para alternar el estado de obtenido -->
+    <div class="obtained-button-container">
+      <button (click)="toggleObtained()">
+        {{ pokemonObtenido ? 'Encontrado ✔️' : 'Encontrado ❌' }}
+      </button>
     </div>
+    <!-- Contenedor de formas -->
+    <div class="shapes-container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="square"></div>
+    </div>
+  </div>
+  <div class="container grafico">
+    <app-grafico></app-grafico>
+  </div>
 </section>
